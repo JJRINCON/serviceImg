@@ -9,6 +9,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 var Request = require("request")
 let quote
 
+app.get('/', (req, res) => {
+    res.send("hola mundo")
+})
+
 app.post('/getQuote', async (req, res) => { 
     Request.get("https://api.kanye.rest", { json: true },
         (error, response, body) => {
