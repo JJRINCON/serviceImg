@@ -30,7 +30,7 @@ async function getQuote(res, q){
     const font = await Jimp.loadFont(Jimp.FONT_SANS_10_BLACK);
     await image.print(font, 5, 10, q);
     await image.writeAsync(__dirname + '/img1.png');
-    const base64 = await fs.readFileSync(__dirname + '/xd1.png', "base64");
+    const base64 = await fs.readFileSync(__dirname + '/img1.png', "base64");
     console.log(base64)
     res.send(base64);
 }
