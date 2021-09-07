@@ -31,7 +31,7 @@ app.post('/getQuote', async (req, res) => {
 
 async function getQuote(res, q){
     const image = await Jimp.read(__dirname + '/img.png');
-    const font = await Jimp.loadFont(Jimp.FONT_SANS_10_BLACK);
+    const font = await Jimp.loadFont(Jimp.FONT_SANS_14_BLACK);
     let height = image.bitmap.height
     await image.print(font, 5,(height * 0.9), q);
     await image.writeAsync(__dirname + '/img1.png');
