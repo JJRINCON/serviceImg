@@ -32,7 +32,8 @@ app.post('/getQuote', async (req, res) => {
 async function getQuote(res, q){
     const image = await Jimp.read(__dirname + '/img.png');
     const font = await Jimp.loadFont(Jimp.FONT_SANS_10_BLACK);
-    await image.print(font, 5, 10, q);
+    let height = image.bitmap.height
+    await image.print(font, 5,(height * 0.9), q);
     await image.writeAsync(__dirname + '/img1.png');
     const base64 = await fs.readFileSync(__dirname + '/img1.png', "base64");
     console.log(base64)
