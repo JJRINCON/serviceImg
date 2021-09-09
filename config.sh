@@ -46,7 +46,4 @@ EOF
 # This runs the "mysql_secure_installation" script which removes insecure defaults.
 sudo expect ~/secure_our_mysql.sh
 
-/etc/init.d/mysql restart
-
-# Cleanup
-rm -v ~/secure_our_mysql.sh # Remove the generated Expect script
+sudo service mysql start
